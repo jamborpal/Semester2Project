@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" stylesheets="@window.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MyProfileController">
+   <top>
+      <HBox prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #67666D;" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <Button minHeight="60.0" minWidth="120.0" mnemonicParsing="false" onAction="#onBrowseGames" style="-fx-background-color: #75B5C6; -fx-background-radius: 0;" text="Browse Games">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button minHeight="60.0" minWidth="120.0" mnemonicParsing="false" onAction="#onAddGame" style="-fx-background-color: #75B5C6; -fx-background-radius: 0;" text="Add Game">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button disable="true" minHeight="60.0" minWidth="120.0" mnemonicParsing="false" prefWidth="76.0" style="-fx-background-color: #75B5C6; -fx-background-radius: 0;" text="My Profile">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="56.0" fitWidth="200.0">
+               <image>
+                  <Image url="@titlewithicon.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </ImageView>
+         </children></HBox>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" minWidth="240.0" prefHeight="440.0" prefWidth="307.0" style="-fx-background-color: #AFC3CF;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="username" text="Username">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="307.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onAccept" style="-fx-background-color: #75B5C6;" text="Accept Trade">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onDecline" style="-fx-background-color: #75B5C6;" text="Decline">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onSetAvailable" style="-fx-background-color: #75B5C6;" text="Set Available">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="53.0" prefWidth="307.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onViewOtherProfile" style="-fx-background-color: #75B5C6;" text="View Profile" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="307.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onEdit" style="-fx-background-color: #75B5C6;" text="Edit Profile">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onDelete" style="-fx-background-color: #75B5C6;" text="Delete Game">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#onDeleteUser" style="-fx-background-color: #75B5C6;" text="Delete Profile" />
+               </children>
+            </HBox>
+            <TextFlow prefHeight="267.0" prefWidth="272.0" style="-fx-background-color: #67666D;" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="bio" prefWidth="272.0" text="Type information about you" textFill="#e4e4e4" />
+               </children>
+            </TextFlow>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <SplitPane dividerPositions="0.5" prefHeight="254.0" prefWidth="456.0" style="-fx-background-color: #75B5C6;" VBox.vgrow="ALWAYS">
+               <items>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="My Games">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Accordion VBox.vgrow="ALWAYS">
+                                <panes>
+                                  <TitledPane animated="false" text="Owned">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <ListView fx:id="ownedGames" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" text="Rented">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <ListView fx:id="rentedGames" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                  </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Trades">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Accordion VBox.vgrow="ALWAYS">
+                                <panes>
+                                  <TitledPane animated="false" text="Incoming">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <ListView fx:id="rentals" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" text="Pending">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <ListView fx:id="pendingRentals" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                  </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </items>
+            </SplitPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" stylesheets="@window.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.OtherProfileController">
+   <top>
+      <HBox prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #67666D;" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <Button minHeight="60.0" minWidth="120.0" mnemonicParsing="false" onAction="#onBrowseGames" style="-fx-background-color: #75B5C6; -fx-background-radius: 0;" text="Browse Games">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button minHeight="60.0" minWidth="120.0" mnemonicParsing="false" onAction="#onAddGame" style="-fx-background-color: #75B5C6; -fx-background-radius: 0;" text="Add Game">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button minHeight="60.0" minWidth="120.0" mnemonicParsing="false" onAction="#onMyProfile" prefWidth="76.0" style="-fx-background-color: #75B5C6; -fx-background-radius: 0;" text="My Profile">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="56.0" fitWidth="200.0">
+               <image>
+                  <Image url="@titlewithicon.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </ImageView>
+         </children></HBox>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" minWidth="240.0" style="-fx-background-color: #AFC3CF;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="username" text="Username">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <TextFlow prefWidth="272.0" style="-fx-background-color: #67666D;" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="bio" prefWidth="272.0" text="Type information about you" textFill="#e4e4e4" />
+               </children>
+            </TextFlow>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #75B5C6;" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label text="Other Users Games">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ListView fx:id="ownedGames" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
